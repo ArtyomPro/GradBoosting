@@ -8,6 +8,9 @@ from boosting import *
 boosting = GradBoostingBinaryClassifier()
 boosting.fit(X_train, y_train)
 preds = np.round(boosting.predict(X_test) > 0.5)
+
+feature_importances = boosting.feature_importances_ # пока только для base_model_class = DecisionTreeRegressor
+
 ```
 
 ## Подбор гиперпараметров:
